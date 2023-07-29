@@ -1,0 +1,42 @@
+.navbar {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.233);
+
+    &__list {
+        height: 100%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 24%;
+
+        &__container {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &__item {    
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 200;
+            transition: all .4s ease;
+        }
+
+        &__item:hover {
+            transform: translateY(-15%);
+            color: #504e4e;
+        }
+
+        .basket {
+            width: 40px;
+            cursor: pointer;
+            transition: transform .4s ease;
+            margin-right: 50px;
+        }
+    
+        .basket:hover {
+            transform: translateY(-5%);
+        }
+    }
+}
