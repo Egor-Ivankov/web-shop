@@ -17,20 +17,4 @@ const setContent = (process, Component) => {
     }
 }
 
-const setNav = (process, Component) => {
-    switch(process) {
-        case 'waiting':
-            return;
-        case 'loading':
-            return <p>Lists are loading...</p>
-        case 'complete':
-            return <Component/>
-        case 'error':
-            return <p>An error occurred while requesting the server, please reload the page...</p>
-        default:
-            throw new Error ('get unexpected process')
-    }
-}
-
-
-export {setContent, setNav};
+export {setContent};

@@ -4,15 +4,10 @@ export default function useShopService () {
     const { request, process, setProcess } = useHttp();
     const _apiBase = 'https://fakestoreapi.com/';
 
-    const getProducts = async () => {
-        const data = await request(`${_apiBase}products`);
+    const getProducts = async (product = '') => {
+        const data = await request(`${_apiBase}products/${product}`);
         return data;
     }
 
-    const getCategories = async () => {
-        const data = await request(`${_apiBase}products/categories`);
-        return data;
-    }
-
-    return { getProducts, getCategories, process, setProcess };
+    return { getProducts, process, setProcess };
 }

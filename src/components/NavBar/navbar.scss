@@ -1,27 +1,24 @@
 .navbar {
     height: 50px;
     background-color: rgba(0, 0, 0, 0.233);
+    border-bottom: 1px solid gray;
+    box-shadow: 3px 0 5px 2px rgba(0, 0, 0, 0.346);
+    display: flex;
+    justify-content: center;
 
     &__list {
+        width: 40%;
         height: 100%;
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        &__container {
-            width: 60%;
-            display: flex;
-            justify-content: space-between;
-        }
-        
         &__item {    
             cursor: pointer;
             font-size: 14px;
             font-weight: 200;
             transition: all .4s ease;
-            text-transform: uppercase;
-            margin-left: 50px;
         }
 
         &__item:hover {
@@ -30,23 +27,17 @@
         }
 
         .icon {
-            width: 33px;
+            width: 25px;
             cursor: pointer;
             transition: transform .4s ease;
-            margin: 0 50px 0 30px;
+        }
+        .icon:last-child {
+            margin-left: 18px;
         }
 
-        .search {
-            @extend .icon;
-            margin: 0;
-        }
-    
         .icon:hover {
             transform: translateY(-5%);
         }
         
-        .icon:first-child{
-            margin-left: 50px;
-        }
     }
 }
