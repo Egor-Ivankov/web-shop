@@ -8,19 +8,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 24%;
 
         &__container {
-            width: 50%;
+            width: 60%;
             display: flex;
             justify-content: space-between;
         }
         
         &__item {    
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 200;
             transition: all .4s ease;
+            text-transform: uppercase;
+            margin-left: 50px;
         }
 
         &__item:hover {
@@ -28,15 +29,24 @@
             color: #504e4e;
         }
 
-        .basket {
-            width: 40px;
+        .icon {
+            width: 33px;
             cursor: pointer;
             transition: transform .4s ease;
-            margin-right: 50px;
+            margin: 0 50px 0 30px;
+        }
+
+        .search {
+            @extend .icon;
+            margin: 0;
         }
     
-        .basket:hover {
+        .icon:hover {
             transform: translateY(-5%);
+        }
+        
+        .icon:first-child{
+            margin-left: 50px;
         }
     }
 }
