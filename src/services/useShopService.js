@@ -1,6 +1,6 @@
 import useHttp from "../hooks/http.hook";
 
-export default function useShopService () {
+export default function useShopService() {
     const { request, process, setProcess } = useHttp();
     const _apiBase = 'https://fakestoreapi.com/';
 

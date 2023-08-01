@@ -1,11 +1,9 @@
 import React from 'react';
-import NavBar from '../components/NavBar/NavBar';
-import FirstSection from '../components/First-section/FirstSection';
+import MainPage from '../pages/MainPage';
 const App = () => {
     return (
         <>
-            <NavBar/>     
-            <FirstSection/>
+            <MainPage/>
         </>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import error from '../../img/error.gif';
+import error from '../../img/animations/error.gif';
 
 import './error.scss';
 

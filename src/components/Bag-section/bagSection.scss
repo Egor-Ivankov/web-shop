@@ -1,0 +1,59 @@
+section {
+    cursor: pointer;
+}
+
+.container {
+    height: 700px;
+    display: grid;
+    grid-template-columns: 40% 25% 20%;
+    margin: 65px 0 0 200px;
+    background-color: #fff;
+
+    .main {
+        
+        h2 {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        img {
+            margin-top: 30px;
+            width: 400px;
+        }
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 95%;
+
+        .description {
+            font-weight: 200;
+            font-size: 24px;
+        }
+
+        .price{
+            margin-top: 20%;
+            font-size: 30px;
+        }
+
+        a {
+            font-weight: 200;
+            font-size: 18px;
+            text-decoration: none;
+            margin-top: 15px;
+            color: rgb(157, 132, 132);
+            transition: transform .4s ease;
+        }
+
+        a:hover {
+            transform: translateY(-15%);
+        }
+    }
+
+    .text {
+        font-weight: 200;
+        font-size: 32px;
+    }
+}
