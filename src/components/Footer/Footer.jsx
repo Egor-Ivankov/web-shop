@@ -6,6 +6,7 @@ export default function Footer() {
     return (
         <div className='footer'>
             <ul className='footer-list'>
+                <Link to='/' className='footer-list-item'>Home</Link>
                 <Link to='/electronics' className='footer-list-item'>Electronics</Link>
                 <Link to='/jewelery' className='footer-list-item'>Jewelery</Link>
                 <Link to='/mens-clothing' className='footer-list-item'>Men's clothing</Link>

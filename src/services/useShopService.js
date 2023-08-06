@@ -9,5 +9,10 @@ export default function useShopService() {
         return data;
     }
 
-    return { getProducts, process, setProcess };
+    const getCategory = async (category) => {
+        const data = request(`${_apiBase}products/category/${category}`)
+        return data;
+    }
+
+    return { getProducts, getCategory, process, setProcess };
 }
