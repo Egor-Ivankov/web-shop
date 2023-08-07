@@ -1,14 +1,15 @@
-import React, {lazy, Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 import Footer from '../components/Footer/Footer';
 import Loading from '../components/Loading/Loading';
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 
 const MainPage = lazy(() => import('../pages/MainPage'));
-const ElectronicsPage  = lazy(() => import('../pages/ElectronicsPage'));
-const JeweleryPage  = lazy(() => import('../pages/JeweleryPage'));
-const MensClothingPage  = lazy(() => import('../pages/MensClothingPage'));
-const WomensClothingPage  = lazy(() => import('../pages/WomensClothingPage'));
+const SinglePage = lazy(() => import('../pages/SinglePage'));
+const ElectronicsLayout = lazy(() => import('../pages/layout/ElectronicsLayout'));
+const JeweleryLayout = lazy(() => import('../pages/layout/JeweleryLayout'));
+const MensClothingLayout = lazy(() => import('../pages/layout/MensClothingLayout'));
+const WomensClothingLayout = lazy(() => import('../pages/layout/WomensClothingLayout'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
@@ -17,12 +18,40 @@ const App = () => {
             <Suspense fallback={<Loading/>}>
                 <Routes>
                     <Route path='/' element={<Layout/>}>
-                            <Route index element={<MainPage/>}/>
-                            <Route path='electronics' element={<ElectronicsPage/>}/>
-                            <Route path='jewelery' element={<JeweleryPage/>}/>
-                            <Route path='mens-clothing' element={<MensClothingPage/>}/>
-                            <Route path='womens-clothing' element={<WomensClothingPage/>}/>
-                            <Route path='*' element={<NotFoundPage/>}/>
+                        <Route index element={<MainPage/>}/>
+                        <Route 
+                            path='electronics' 
+                            element={ <SinglePage 
+                                        Component={ ElectronicsLayout } 
+                                        dataType={"electronics"}
+                                        />
+                            } 
+                        />
+                        <Route 
+                            path='jewelery' 
+                            element={ <SinglePage 
+                                        Component={ JeweleryLayout } 
+                                        dataType={"jewelery"}
+                                        />
+                            } 
+                        />
+                        <Route 
+                            path='mens-clothing' 
+                            element={ <SinglePage 
+                                        Component={ MensClothingLayout } 
+                                        dataType={'mens-clothing'}
+                                        />
+                            }
+                        />
+                        <Route 
+                            path='womens-clothing'
+                            element={ <SinglePage 
+                                        Component={ WomensClothingLayout } 
+                                        dataType={'womens-clothing'}
+                                        />
+                            }
+                        />
+                        <Route path='*' element={<NotFoundPage/>}/>
                     </Route>
                 </Routes>
             </Suspense>

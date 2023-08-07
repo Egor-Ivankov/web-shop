@@ -17,4 +17,4 @@ const setContent = (process, Component, data) => {
     }
 }
 
-export {setContent};
+export default setContent;

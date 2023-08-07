@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useShopService from '../../services/useShopService';
-import {setContent} from '../../utils/setContent';
+import setContent from '../../utils/setContent';
 import './bagSection.scss';
 
 const BagSection = () => {
