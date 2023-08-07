@@ -6,16 +6,28 @@ import { Link, Outlet } from 'react-router-dom';
 import './layout.scss';
 
 export default function Layout() {
+
+    const navElements = [
+        {value: 'Electronics', identifier: '/electronics', id: 1},
+        {value: 'Jewelery', identifier: '/jewelery', id: 2},
+        {value: 'Men\'s clothing', identifier: '/mens-clothing', id: 3},
+        {value: 'Women\'s clothing', identifier: '/womens-clothing', id: 4},
+    ];
+
     return (
         <>
             <header>
                 <nav className='navbar' role='navigation'>
                     <ul className='navbar__list'>
-                            <Link to='/'><img className='icon' src={logo} alt="logo" /></Link>
-                            <Link className='navbar__list__item' to='/electronics'>Electronics</Link>
-                            <Link className='navbar__list__item' to='/jewelery'>Jewelery</Link>
-                            <Link className='navbar__list__item' to='/mens-clothing'>Men's clothing</Link>
-                            <Link className='navbar__list__item' to='/womens-clothing'>Women's clothing</Link>
+                        <Link to='/'><img className='icon' src={logo} alt="logo" /></Link>
+                        {navElements.map(item =>    <Link 
+                                                        className='navbar__list__item' 
+                                                        to={item.identifier}
+                                                        key={item.id}>
+                                                            {item.value}
+                                                    </Link>
+                                        )
+                        }
                         <div>
                             <img className='icon' src={search} alt="search-icon" />
                             <img className='icon' src={basket} alt="basket-icon" />

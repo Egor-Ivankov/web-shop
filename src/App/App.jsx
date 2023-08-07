@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import Footer from '../components/Footer/Footer';
 import Loading from '../components/Loading/Loading';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
@@ -55,7 +54,6 @@ const App = () => {
                     </Route>
                 </Routes>
             </Suspense>
-            <Footer/>
         </>
     );
 }
