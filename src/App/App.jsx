@@ -5,10 +5,8 @@ import Layout from '../components/Layout/Layout';
 
 const MainPage = lazy(() => import('../pages/MainPage'));
 const SinglePage = lazy(() => import('../pages/SinglePage'));
-const ElectronicsLayout = lazy(() => import('../pages/layout/ElectronicsLayout'));
-const JeweleryLayout = lazy(() => import('../pages/layout/JeweleryLayout'));
-const MensClothingLayout = lazy(() => import('../pages/layout/MensClothingLayout'));
-const WomensClothingLayout = lazy(() => import('../pages/layout/WomensClothingLayout'));
+const ListLayout = lazy(() => import('../pages/layout/ListLayout'));
+const ItemLayout = lazy(() => import('../pages/layout/ItemLayout'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
@@ -21,7 +19,7 @@ const App = () => {
                         <Route 
                             path='electronics' 
                             element={ <SinglePage 
-                                        Component={ ElectronicsLayout } 
+                                        Component={ ListLayout } 
                                         dataType={"electronics"}
                                         />
                             } 
@@ -29,7 +27,7 @@ const App = () => {
                         <Route 
                             path='jewelery' 
                             element={ <SinglePage 
-                                        Component={ JeweleryLayout } 
+                                        Component={ ListLayout } 
                                         dataType={"jewelery"}
                                         />
                             } 
@@ -37,7 +35,7 @@ const App = () => {
                         <Route 
                             path='mens-clothing' 
                             element={ <SinglePage 
-                                        Component={ MensClothingLayout } 
+                                        Component={ ListLayout } 
                                         dataType={'mens-clothing'}
                                         />
                             }
@@ -45,10 +43,14 @@ const App = () => {
                         <Route 
                             path='womens-clothing'
                             element={ <SinglePage 
-                                        Component={ WomensClothingLayout } 
+                                        Component={ ListLayout } 
                                         dataType={'womens-clothing'}
                                         />
                             }
+                        />
+                        <Route 
+                            path='item/:id'
+                            element={ < ItemLayout /> }
                         />
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Route>

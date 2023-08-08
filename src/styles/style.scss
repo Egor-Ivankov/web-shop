@@ -6,4 +6,80 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.not-found {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    &-image {
+        width: 900px;
+    } 
+
+    &-btn {
+        width: 90px;
+        height: 30px;
+        background-color: #4ba8ef;
+        color: #fff;
+        border: 1px solid rgba(116, 115, 115, 0.458);
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 200;
+        font-size: 15px;
+        transition: .4s all ease;
+    }
+    
+    &-btn:hover {
+        width: 95px;
+        height: 32px;
+        transform: translateY(-10%);
+    }
+}
+
+.single-item {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 5% 0 0 10%;
+
+    img {
+        width: 600px;
+        height: 450px;
+        border-radius: 10px;
+        margin: 50px 150px 0 0;
+    }
+
+    &-text {
+        margin: 50px 0 0 0;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #5b5b5b;
+            padding-top: 50px;
+            font-weight: 200;
+            width: 60%;
+        }
+        
+        .price {
+            font-weight: 400;
+            font-size: 24px;
+            color: black;
+        }
+
+        .rate {
+            color: black;
+            font-weight: 200;
+            font-size: 20px;
+        }
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

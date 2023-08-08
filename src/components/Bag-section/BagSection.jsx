@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useShopService from '../../services/useShopService';
 import setContent from '../../utils/setContent';
 import './bagSection.scss';
@@ -40,7 +41,7 @@ const View = ({data}) => {
                 <div className='information'>
                     <p className='description'>{data.description}</p>
                     <p className='price'>{data.price} $</p>
-                    <a href="#/">More detailed &gt; </a>
+                    <Link to="/item/1">More detailed &gt; </Link>
                 </div>
                 <p className='text'>Fjallraven. Simple.impossible.</p>
             </div>

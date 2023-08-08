@@ -1,5 +1,6 @@
 import React from 'react';
 import backPack from '../../img/back-pack.png';
+import { Link } from 'react-router-dom';
 import './backPackSection.scss';
 
 export default function BackPackSection() {
@@ -19,7 +20,7 @@ export default function BackPackSection() {
             <img src={backPack} alt="back-pack" />
             <div className='back-pack-text'>
                 <p className='back-pack-text-price'>99.9$</p>
-                <a href="#/">More detailed &gt; </a>
+                <Link to="/item/1">More detailed &gt; </Link>
                 <h2>Fjallraven - Kanken <br/> Royal Blue</h2>
             </div>
         </div>
