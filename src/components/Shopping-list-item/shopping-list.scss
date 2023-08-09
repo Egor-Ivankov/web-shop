@@ -3,19 +3,24 @@
     display: grid;
     grid-template-columns: repeat(3, 30%);  
     grid-gap: 50px;
+    
+    .link {
+        cursor: auto;
+    }
 
     .list-item {
-        width: 300px;
-        height: 400px;
+        width: 350px;
+        height: 380px;
         text-align: center;
-        cursor: pointer;
         transition: box-shadow .3s ease;
         border-radius: 15px;
+        cursor: auto;
 
         &-image {
-            width: 75%;
+            width: 65%;
             height: 58%;
             margin-top: 20px;
+            cursor: pointer;
         }
 
         &-container {
@@ -31,9 +36,17 @@
             margin: 10px 20px 10px 10px;
             font-weight: 200;
             color: #3e3d3d;
+            cursor: pointer;
+            transition: color .4s ease;
         }
+
+        &-title:hover {
+            color: #6dc972;
+        }
+
         &-price {
             font-size: 20px;
+            cursor: pointer;
         }
     }
     .list-item:hover {

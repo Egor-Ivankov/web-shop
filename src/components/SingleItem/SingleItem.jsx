@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useShopService from '../../services/useShopService';
-import setContent from '../../utils/setContent';
+import {setContent} from '../../utils/setContent';
 import '../../styles/style.scss';
 
 const SingleItem = () => {

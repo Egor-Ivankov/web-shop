@@ -17,4 +17,20 @@ const setContent = (process, Component, data) => {
     }
 }
 
-export default setContent;
+const setContentMainPage = (process, Component, data) => {
+    switch(process) {
+        case 'waiting':
+            return;
+        case 'loading':
+            return;
+        case 'complete':
+            return <Component data={data}/>
+        case 'error':
+            alert('Web-site is broken, please, reload page');
+            break;
+        default:
+            throw new Error ('get unexpected process')
+    }
+}
+
+export {setContent, setContentMainPage};

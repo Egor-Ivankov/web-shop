@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import setContent from '../utils/setContent';
+import {setContent} from '../utils/setContent';
 import useShopService from '../services/useShopService';
-
-import '../styles/list.scss';
+import '../components/Shopping-list-item/shopping-list.scss';
 
 const SinglePage = ({Component, dataType}) => {
     const {process, setProcess, getCategory} = useShopService();

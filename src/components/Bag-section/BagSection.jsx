@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BackPackSection from '../Back-pack-section/BackPackSection';
 import useShopService from '../../services/useShopService';
-import setContent from '../../utils/setContent';
+import {setContentMainPage} from '../../utils/setContent';
 import './bagSection.scss';
 
 const BagSection = () => {
@@ -25,27 +26,30 @@ const BagSection = () => {
 
     return (
         <>
-            {setContent(process, View, data)}
+            {setContentMainPage(process, View, data)}
         </>
     );
 };
 
 const View = ({data}) => {
     return (
-        <section>
-            <div className='container'>
-                <div className="main">
-                    <h2>{data.title}</h2>
-                    <img src={data.image} alt='bag'/>
+        <>
+            <section>
+                <div className='container'>
+                    <div className="main">
+                        <h2>{data.title}</h2>
+                        <img src={data.image} alt='bag'/>
+                    </div>
+                    <div className='information'>
+                        <p className='description'>{data.description}</p>
+                        <p className='price'>{data.price} $</p>
+                        <Link to="/item/1">More detailed &gt; </Link>
+                    </div>
+                    <p className='text'>Fjallraven. Simple.impossible.</p>
                 </div>
-                <div className='information'>
-                    <p className='description'>{data.description}</p>
-                    <p className='price'>{data.price} $</p>
-                    <Link to="/item/1">More detailed &gt; </Link>
-                </div>
-                <p className='text'>Fjallraven. Simple.impossible.</p>
-            </div>
-        </section>
+            </section>
+            <BackPackSection/>
+        </>
     );
 };
 
