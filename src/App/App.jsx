@@ -7,6 +7,7 @@ const MainPage = lazy(() => import('../pages/MainPage'));
 const SinglePage = lazy(() => import('../pages/SinglePage'));
 const ListLayout = lazy(() => import('../pages/layout/ListLayout'));
 const ItemLayout = lazy(() => import('../pages/layout/ItemLayout'));
+const ShoppingCart = lazy(() => import('../pages/ShoppingCartPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
@@ -51,6 +52,10 @@ const App = () => {
                         <Route 
                             path='item/:id'
                             element={ < ItemLayout /> }
+                        />
+                        <Route 
+                            path='shopping-cart'
+                            element={ < ShoppingCart /> }
                         />
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Route>

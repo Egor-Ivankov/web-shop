@@ -30,7 +30,7 @@ export default function Layout() {
                         }
                         <div>
                             <img className='icon' src={search} alt="search-icon" />
-                            <img className='icon' src={basket} alt="basket-icon" />
+                            <Link to="shopping-cart"><img className='icon' src={basket} alt="basket-icon" /></Link>
                         </div>
                     </ul>
                 </nav>
