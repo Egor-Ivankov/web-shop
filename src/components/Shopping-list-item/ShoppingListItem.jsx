@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import ShoppingListItemBtns from '../Shopping-list-item-btns/ShoppingListItemBtns';
+import like from '../../img/icons/heart-icon.png';
+import buy from '../../img/animations/buy.gif';
 import { Link } from 'react-router-dom';
 import './shopping-list.scss';
 
-export default function ShoppingListItem({id, image, title, price}) {
+export default function ShoppingListItem({cards, getCards, item}) {
     const SetHover = () => {
         const [isHovering, setIsHovering] = useState(false);
 
@@ -15,17 +16,28 @@ export default function ShoppingListItem({id, image, title, price}) {
             setIsHovering(false);
         }
 
-        return (
-            <Link className='link' to={`/item/${id}`} key={id}>
-                <div className='list-item' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        {isHovering ? <ShoppingListItemBtns/> : null}
-                    <img className='list-item-image' src={image} alt={title} />
-                        <p className='list-item-title'>{title}</p>
-                    <div className="list-item-container">
-                        <p className='list-item-price'>{price}$</p>
-                    </div>
+        const ShoppingListItemBtns = ({cards, getCards}) => {
+            return (
+                <div className='btns'>
+                    <img src={like} alt="like-icon" />
+                    <img src={buy} alt="buy-icon" onClick={() => {
+                        getCards(cards, item);
+                    }}/>
                 </div>
-            </Link>
+            )
+        }
+
+        return (
+            <div className='list-item' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                {isHovering ? <ShoppingListItemBtns getCards={getCards} cards={cards}/> : null}
+                <Link className='link' to={`/item/${item.id}`} key={item.id}>
+                        <img className='list-item-image' src={item.image} alt={item.title} />
+                            <p className='list-item-title'>{item.title}</p>
+                        <div className="list-item-container">
+                            <p className='list-item-price'>{item.price}$</p>
+                        </div>
+                </Link>
+            </div>
         )
     }
 

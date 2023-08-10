@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import Loading from '../components/Loading/Loading';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
@@ -11,6 +11,14 @@ const ShoppingCart = lazy(() => import('../pages/ShoppingCartPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
+    const [cards, setCards] = useState([]);
+
+    const getCards = (cards, newCards) => {
+        setCards([...cards, newCards]);
+        console.log(cards)
+    };
+
+
     return (
         <>
             <Suspense fallback={<Loading/>}>
@@ -22,6 +30,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={"electronics"}
+                                        cards={cards}
+                                        getCards={getCards}
                                         />
                             } 
                         />
@@ -30,6 +40,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={"jewelery"}
+                                        cards={cards}
+                                        getCards={getCards}
                                         />
                             } 
                         />
@@ -38,6 +50,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={'mens-clothing'}
+                                        cards={cards}
+                                        getCards={getCards}
                                         />
                             }
                         />
@@ -46,6 +60,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={'womens-clothing'}
+                                        cards={cards}
+                                        getCards={getCards}
                                         />
                             }
                         />
@@ -55,7 +71,7 @@ const App = () => {
                         />
                         <Route 
                             path='shopping-cart'
-                            element={ < ShoppingCart /> }
+                            element={ < ShoppingCart cards={cards}/> }
                         />
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Route>

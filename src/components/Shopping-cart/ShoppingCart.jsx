@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import ShoppingCartItem from '../Shopping-cart-item/ShoppingCartItem';
 import { Helmet } from 'react-helmet';
 import './shopping-cart.scss';
 
 
-export default function ShoppingCart() {
+export default function ShoppingCart({cards}) {
+    useEffect(() => {
+        console.log(cards)
+    },[])
+
     return (
         <>
             <Helmet>

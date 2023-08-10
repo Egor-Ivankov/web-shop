@@ -1,10 +1,14 @@
 import React from 'react';
 import ShoppingList from '../../components/Shopping-list/ShoppingList';
 
-const ListLayout = ({data}) => {
+const ListLayout = ({data, cards, getCards}) => {
 
     return (
-        <ShoppingList data={data}/>
+        <ShoppingList 
+            data={data} 
+            cards={cards}
+            getCards={getCards}
+        />
     )
 }
 

@@ -4,7 +4,7 @@ import useShopService from '../services/useShopService';
 import { Helmet } from 'react-helmet';
 import '../components/Shopping-list-item/shopping-list.scss';
 
-const SinglePage = ({Component, dataType}) => {
+const SinglePage = ({Component, dataType, cards, getCards}) => {
     const {process, setProcess, getCategory} = useShopService();
     const [data, setData] = useState(null);
 
@@ -53,7 +53,7 @@ const SinglePage = ({Component, dataType}) => {
                     />
                 <title>Web shop list</title>
             </Helmet>
-                {setContent(process, Component, data)}
+                {setContent(process, Component, data, cards, getCards)}
             </>
         </div>
     );

@@ -2,14 +2,14 @@ import React from 'react';
 import Loading from '../components/Loading/Loading';
 import Error from '../components/Error/Error';
 
-const setContent = (process, Component, data) => {
+const setContent = (process, Component, data, cards, getCards) => {
     switch(process) {
         case 'waiting':
             return;
         case 'loading':
             return <Loading/>;
-        case 'complete':
-            return <Component data={data}/>
+        case 'complete': 
+            return <Component data={data} cards={cards} getCards={getCards}/>
         case 'error':
             return <Error/>
         default:
