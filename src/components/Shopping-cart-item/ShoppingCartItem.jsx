@@ -8,7 +8,9 @@ export default function ShoppingCartItem({item}) {
             <ul>
                 <li>
                     <div className='shopping-cart-container-item'>
-                        <img src={item.image} alt="test" className='shopping-cart-container-item-img'/>
+                        <div className="scale">
+                            <img src={item.image} alt="test" className='shopping-cart-container-item-img'/>
+                        </div>
                         <p className='description'>{item.title}</p>
                         <span>Кол-во: </span>
                         <input type="number"/>

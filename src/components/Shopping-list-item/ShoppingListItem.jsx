@@ -31,11 +31,13 @@ export default function ShoppingListItem({cards, getCards, item}) {
             <div className='list-item' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 {isHovering ? <ShoppingListItemBtns getCards={getCards} cards={cards}/> : null}
                 <Link className='link' to={`/item/${item.id}`} key={item.id}>
+                    <div className="scale">
                         <img className='list-item-image' src={item.image} alt={item.title} />
-                            <p className='list-item-title'>{item.title}</p>
-                        <div className="list-item-container">
-                            <p className='list-item-price'>{item.price}$</p>
-                        </div>
+                    </div>
+                    <p className='list-item-title'>{item.title}</p>
+                    <div className="list-item-container">
+                        <p className='list-item-price'>{item.price}$</p>
+                    </div>
                 </Link>
             </div>
         )

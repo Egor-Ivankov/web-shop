@@ -6,6 +6,9 @@
     
     .link {
         cursor: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .list-item {
@@ -15,10 +18,14 @@
         transition: box-shadow .3s ease;
         border-radius: 15px;
         cursor: auto;
-
+        .scale {
+            width: 280px;
+            height: 250px;
+        }
         &-image {
-            width: 65%;
-            height: 58%;
+            padding: 0 0 20px 20px;
+            max-width: 100%;
+            max-height: 100%;
             margin-top: 20px;
             cursor: pointer;
         }
@@ -33,7 +40,7 @@
         }
 
         &-title {
-            margin: 10px 20px 10px 10px;
+            margin: 25px 20px 10px 10px;
             font-weight: 200;
             color: #3e3d3d;
             cursor: pointer;
@@ -47,6 +54,7 @@
         &-price {
             font-size: 20px;
             cursor: pointer;
+            margin-right: 40px;
         }
     }
     .list-item:hover {

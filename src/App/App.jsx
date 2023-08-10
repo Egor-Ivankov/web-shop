@@ -15,7 +15,6 @@ const App = () => {
 
     const getCards = (cards, newCards) => {
         setCards([...cards, newCards]);
-        console.log(cards)
     };
 
 
