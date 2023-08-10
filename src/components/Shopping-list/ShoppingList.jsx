@@ -7,7 +7,8 @@ export default function ShoppingList({data}) {
                                 image={item.image}
                                 title={item.title}
                                 price={item.price}
-                            />)
-
+                                key={item.id}
+                            />
+    )
 }
 

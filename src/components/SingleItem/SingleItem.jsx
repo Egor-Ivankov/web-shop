@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useShopService from '../../services/useShopService';
 import {setContent} from '../../utils/setContent';
+import { Helmet } from 'react-helmet';
 import '../../styles/style.scss';
 
 const SingleItem = () => {
@@ -40,6 +41,12 @@ const SingleItem = () => {
 
     return (
         <>
+            <Helmet>
+                <meta name='description' 
+                        content='Cart-page'
+                    />
+                    <title>Web shop item</title>t
+            </Helmet>
             {setContent(process, renderItems, data)}
         </>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {setContent} from '../utils/setContent';
 import useShopService from '../services/useShopService';
+import { Helmet } from 'react-helmet';
 import '../components/Shopping-list-item/shopping-list.scss';
 
 const SinglePage = ({Component, dataType}) => {
@@ -46,6 +47,12 @@ const SinglePage = ({Component, dataType}) => {
     return (
         <div className='list-container'>
             <>
+            <Helmet>
+                <meta name='description' 
+                            content='List-page'
+                    />
+                <title>Web shop list</title>
+            </Helmet>
                 {setContent(process, Component, data)}
             </>
         </div>
