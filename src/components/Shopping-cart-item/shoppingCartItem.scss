@@ -9,20 +9,16 @@
     }
 
     &-item {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-row: row;
+        grid-template-columns: 110px 400px 70px 90px 170px 70px;
         align-items: center;    
         justify-content: center;
         border: 1px solid rgba(128, 128, 128, 0.438);
         border-radius: 5px;
         height: 100px;
 
-        p {
-            margin-left: 50px;
-        }
-
         span {
-            margin-left: 150px;
             font-weight: 200;
             font-size: 14px;
         }
@@ -30,8 +26,6 @@
         input {
             width: 45px;
             height: 25px;
-            padding-left: 14px;
-            margin-left: 10px;
             text-align: center;
             border: 0;
             background-color: #7e7e7e7d;
@@ -44,16 +38,17 @@
             background-color: #fff;
             cursor: pointer;
             width: 20px;
-            margin: 0 50px 0 50px;
 
             img {
                 width: 20px;
             }
         }
+        .description {
+            width: 330px;
+        }
 
         &-img {
-            margin-left: 20px;
-            width: 100px;
+            width: 70px;
             height: 70px;
             border-radius: 5px;
         }

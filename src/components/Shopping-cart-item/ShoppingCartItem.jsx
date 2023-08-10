@@ -9,10 +9,10 @@ export default function ShoppingCartItem({item}) {
                 <li>
                     <div className='shopping-cart-container-item'>
                         <img src={item.image} alt="test" className='shopping-cart-container-item-img'/>
-                        <p>{item.title}</p>
+                        <p className='description'>{item.title}</p>
                         <span>Кол-во: </span>
                         <input type="number"/>
-                        <p>{item.price}</p>
+                        <p>{item.price} $</p>
                         <button><img src={cross} alt="cross" /></button>
                     </div>
                 </li>
