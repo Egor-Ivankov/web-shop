@@ -71,7 +71,7 @@ const App = () => {
                         />
                         <Route 
                             path='shopping-cart'
-                            element={ < ShoppingCart cards={cards}/> }
+                            element={ < ShoppingCart cards={cards} /> }
                         />
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Route>

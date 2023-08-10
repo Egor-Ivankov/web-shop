@@ -1,14 +1,12 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import ShoppingCartItem from '../Shopping-cart-item/ShoppingCartItem';
 import { Helmet } from 'react-helmet';
 import './shopping-cart.scss';
 
 
 export default function ShoppingCart({cards}) {
-    useEffect(() => {
-        console.log(cards)
-    },[])
-
+    const renderItems = () => cards.map((item, i) => <ShoppingCartItem item={item} key={i}/>);
+    
     return (
         <>
             <Helmet>
@@ -19,9 +17,7 @@ export default function ShoppingCart({cards}) {
             </Helmet>
                 <div className='shopping-cart'>
                     <h2>Shopping cart</h2>
-                    <ShoppingCartItem/>
-                    <ShoppingCartItem/>
-                    <ShoppingCartItem/>
+                    {renderItems()}
                 </div>
         </>
     )

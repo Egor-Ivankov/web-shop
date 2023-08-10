@@ -13,16 +13,12 @@
         flex-direction: row;
         align-items: center;    
         justify-content: center;
-        padding: 20px 0;
         border: 1px solid rgba(128, 128, 128, 0.438);
         border-radius: 5px;
+        height: 100px;
 
         p {
             margin-left: 50px;
-        }
-
-        p:last-child {
-            margin-left: 200px;
         }
 
         span {
@@ -48,7 +44,7 @@
             background-color: #fff;
             cursor: pointer;
             width: 20px;
-            margin-left: 50px;
+            margin: 0 50px 0 50px;
 
             img {
                 width: 20px;
@@ -56,6 +52,7 @@
         }
 
         &-img {
+            margin-left: 20px;
             width: 100px;
             height: 70px;
             border-radius: 5px;
