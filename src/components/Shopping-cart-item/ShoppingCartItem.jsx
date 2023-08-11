@@ -11,7 +11,7 @@ export default function ShoppingCartItem({item}) {
                         <div className="scale">
                             <img src={item.image} alt="test" className='shopping-cart-container-item-img'/>
                         </div>
-                        <p className='description'>{item.title}</p>
+                        <p className='title'>{item.title}</p>
                         <span>Кол-во: </span>
                         <input type="number"/>
                         <p>{item.price} $</p>

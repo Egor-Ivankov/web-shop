@@ -1,6 +1,8 @@
 import React from 'react';
 import ShoppingCartItem from '../Shopping-cart-item/ShoppingCartItem';
+import shoppingCart from '../../img/shopping-cart.png';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import './shopping-cart.scss';
 
 
@@ -17,8 +19,18 @@ export default function ShoppingCart({cards}) {
             </Helmet>
                 <div className='shopping-cart'>
                     <h2>Shopping cart</h2>
-                    {renderItems()}
+                    {cards.length ? renderItems() : <EmptyCart/>}
                 </div>
         </>
+    )
+}
+
+const EmptyCart = () => {
+    return (
+        <div className='shopping-cart-empty'>
+            <img className='shopping-cart-empty-img' src={shoppingCart} alt="shopping-cart" />
+            <p className='shopping-cart-empty-par'>The shopping cart is empty</p>
+            <Link to="/" className='shopping-cart-empty-link'>Home</Link>
+        </div>
     )
 }

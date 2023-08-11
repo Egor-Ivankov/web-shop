@@ -6,5 +6,40 @@
 
     h2 {
         text-align: center;
+        font-weight: 200;
+        font-size: 30px;
+    }
+}
+.shopping-cart-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+
+    &-img {
+        width: 150px;
+    }
+    
+    &-par{
+        font-size: 20px;
+        font-weight: 200;
+        color: rgba(128, 128, 128, 0.778);
+    }
+
+    &-link {
+        margin-top: 25px;
+        padding: 5px 10px 5px 10px;
+        border: 1px solid rgba(128, 128, 128, 0.778);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 200;
+        color: rgba(82, 82, 82, 0.978);
+        background-color: #87878749;
+        transition: all .4s ease;
+    }
+
+    &-link:hover {
+        transform: translateY(-5%);
     }
 }
