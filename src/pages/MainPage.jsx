@@ -1,7 +1,9 @@
 import React from 'react';
 import BagSection from '../components/Bag-section/BagSection';
 import Footer from '../components/Footer/Footer';
+import ErrorBoundary from '../components/Error-boundary/Errorboundary';
 import { Helmet } from 'react-helmet';
+
 
 export default function MainPage() {
     return (
@@ -12,8 +14,12 @@ export default function MainPage() {
                     />
                 <title>Web shop</title>
             </Helmet>
-            <BagSection/>
-            <Footer/>
+            <ErrorBoundary>
+                <BagSection/>
+            </ErrorBoundary>
+            <ErrorBoundary>
+                <Footer/>
+            </ErrorBoundary>
         </>
     )
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import ShoppingCart from '../components/Shopping-cart/ShoppingCart';
+import LikedList from '../components/Liked-list/LikedList';
 import ErrorBoundary from '../components/Error-boundary/Errorboundary';
 
-export default function ShoppingCartPage({cards}) {
+export default function LikedPage() {
     return (
         <>
             <ErrorBoundary>
-                <ShoppingCart cards={cards}/>
+                <LikedList/>
             </ErrorBoundary>
         </>
     )

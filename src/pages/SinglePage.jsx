@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {setContent} from '../utils/setContent';
 import useShopService from '../services/useShopService';
 import { Helmet } from 'react-helmet';
+import ErrorBoundary from '../components/Error-boundary/Errorboundary';
 import '../components/Shopping-list-item/shopping-list.scss';
 
 const SinglePage = ({Component, dataType, cards, getCards}) => {
@@ -53,7 +54,9 @@ const SinglePage = ({Component, dataType, cards, getCards}) => {
                     />
                 <title>Web shop list</title>
             </Helmet>
-                {setContent(process, Component, data, cards, getCards)}
+                <ErrorBoundary>
+                    {setContent(process, Component, data, cards, getCards)}
+                </ErrorBoundary>
             </>
         </div>
     );

@@ -1,12 +1,13 @@
 import React, { lazy, Suspense, useState } from 'react';
 import Loading from '../components/Loading/Loading';
 import { Routes, Route } from 'react-router-dom';
-import Layout from '../components/Layout/Layout';
+import NavigationBar from '../components/Navigation-bar/NavigationBar';
 
 const MainPage = lazy(() => import('../pages/MainPage'));
 const SinglePage = lazy(() => import('../pages/SinglePage'));
 const ListLayout = lazy(() => import('../pages/layout/ListLayout'));
 const ItemLayout = lazy(() => import('../pages/layout/ItemLayout'));
+const LikedList = lazy(() => import('../pages/LikedPage'));
 const ShoppingCart = lazy(() => import('../pages/ShoppingCartPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
@@ -22,7 +23,7 @@ const App = () => {
         <>
             <Suspense fallback={<Loading/>}>
                 <Routes>
-                    <Route path='/' element={<Layout/>}>
+                    <Route path='/' element={<NavigationBar/>}>
                         <Route index element={<MainPage/>}/>
                         <Route 
                             path='electronics' 
@@ -67,6 +68,10 @@ const App = () => {
                         <Route 
                             path='item/:id'
                             element={ < ItemLayout /> }
+                        />
+                        <Route 
+                            path='liked-list'
+                            element={ < LikedList /> }
                         />
                         <Route 
                             path='shopping-cart'

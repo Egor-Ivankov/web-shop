@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import like from '../../img/icons/heart-icon.png';
 import buy from '../../img/animations/buy.gif';
 import { Link } from 'react-router-dom';
+import ErrorBoundary from '../Error-boundary/Errorboundary';
 import './shopping-list.scss';
 
 export default function ShoppingListItem({cards, getCards, item}) {
@@ -45,7 +46,9 @@ export default function ShoppingListItem({cards, getCards, item}) {
 
     return (
         <>
-            <SetHover/>
+            <ErrorBoundary>
+                <SetHover/>
+            </ErrorBoundary>
         </>
     )
 }

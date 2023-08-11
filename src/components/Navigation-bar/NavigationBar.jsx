@@ -2,10 +2,11 @@ import React from 'react';
 import logo from '../../img/icons/logo.png';
 import search from '../../img/icons/search-icon.png';
 import basket from '../../img/icons/bag-icon.png';
+import heart from '../../img/icons/heart-navBar-icon.png';
 import { Link, Outlet } from 'react-router-dom';
-import './layout.scss';
+import './navigation-bar.scss';
 
-export default function Layout() {
+export default function NavigationBar() {
 
     const navElements = [
         {value: 'Electronics', identifier: '/electronics', id: 1},
@@ -30,6 +31,7 @@ export default function Layout() {
                         }
                         <div>
                             <img className='icon' src={search} alt="search-icon" />
+                            <Link to="liked-list"><img className='icon' src={heart} alt="heart-icon" /></Link>
                             <Link to="shopping-cart"><img className='icon' src={basket} alt="basket-icon" /></Link>
                         </div>
                     </ul>

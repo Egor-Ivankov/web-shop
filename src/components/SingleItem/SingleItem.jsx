@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useShopService from '../../services/useShopService';
 import {setContent} from '../../utils/setContent';
 import { Helmet } from 'react-helmet';
+import ErrorBoundary from '../Error-boundary/Errorboundary';
 import '../../styles/style.scss';
 
 const SingleItem = () => {
@@ -47,7 +48,9 @@ const SingleItem = () => {
                     />
                     <title>Web shop item</title>t
             </Helmet>
-            {setContent(process, renderItems, data)}
+            <ErrorBoundary>
+                {setContent(process, renderItems, data)}
+            </ErrorBoundary>
         </>
     );
 }
