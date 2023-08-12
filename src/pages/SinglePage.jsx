@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import ErrorBoundary from '../components/Error-boundary/Errorboundary';
 import '../components/Shopping-list-item/shopping-list.scss';
 
-const SinglePage = ({Component, dataType, cards, getCards}) => {
+const SinglePage = ({Component, dataType, cards, getCards, liked, getLiked}) => {
     const {process, setProcess, getCategory} = useShopService();
     const [data, setData] = useState(null);
 
@@ -55,7 +55,7 @@ const SinglePage = ({Component, dataType, cards, getCards}) => {
                 <title>Web shop list</title>
             </Helmet>
                 <ErrorBoundary>
-                    {setContent(process, Component, data, cards, getCards)}
+                    {setContent(process, Component, data, cards, getCards, liked, getLiked)}
                 </ErrorBoundary>
             </>
         </div>

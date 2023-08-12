@@ -13,11 +13,15 @@ const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const App = () => {
     const [cards, setCards] = useState([]);
+    const [liked, setLiked]= useState([]);
 
     const getCards = (cards, newCards) => {
         setCards([...cards, newCards]);
     };
 
+    const getLiked = (liked, newLiked) => {
+        setLiked([...liked, newLiked]);
+    }
 
     return (
         <>
@@ -30,6 +34,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={"electronics"}
+                                        liked={liked}
+                                        getLiked={getLiked}
                                         cards={cards}
                                         getCards={getCards}
                                         />
@@ -40,6 +46,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={"jewelery"}
+                                        liked={liked}
+                                        getLiked={getLiked}
                                         cards={cards}
                                         getCards={getCards}
                                         />
@@ -50,6 +58,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={'mens-clothing'}
+                                        liked={liked}
+                                        getLiked={getLiked}
                                         cards={cards}
                                         getCards={getCards}
                                         />
@@ -60,6 +70,8 @@ const App = () => {
                             element={ <SinglePage 
                                         Component={ ListLayout } 
                                         dataType={'womens-clothing'}
+                                        liked={liked}
+                                        getLiked={getLiked}
                                         cards={cards}
                                         getCards={getCards}
                                         />
@@ -71,7 +83,7 @@ const App = () => {
                         />
                         <Route 
                             path='liked-list'
-                            element={ < LikedList /> }
+                            element={ < LikedList liked={liked}/> }
                         />
                         <Route 
                             path='shopping-cart'

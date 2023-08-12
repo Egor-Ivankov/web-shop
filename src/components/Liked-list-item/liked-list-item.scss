@@ -1,0 +1,71 @@
+.liked-container {
+    display: grid;
+    grid-template-columns: 30% 68% 5%;
+    width: 60%;
+    margin: 4% 0 0 20%;
+    border: 1px solid rgba(128, 128, 128, 0.599);
+    border-radius: 10px;
+    padding: 20px 90px 20px 20px;
+
+    &-scale {
+        width: 200px;
+        height: 220px;
+
+        &-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            padding-left: 10%;
+        }
+    }
+    &-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-title {
+            font-size: 24px;
+        }
+
+        &-description {
+            font-weight: 200;
+            color: rgb(89, 89, 89);
+            font-size: 14px;
+        }
+
+        &-price {
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: 200;
+        }
+    }
+
+    &-buttons {
+        &-cross {
+            border: none;
+            background-color: #fff;
+            cursor: pointer;
+            width: 20px;
+            margin: 0 0 186px 60px;
+    
+            img {
+                width: 23px;
+            }
+        }
+        &-buy {
+            width: 60px;
+            height: 25px;
+            margin-bottom: 5px;
+            font-weight: 200;
+            font-size: 13px;
+            background-color: #06b83b3e;
+            border: 1px solid rgba(128, 128, 128, 0.599);
+            border-radius: 45px;
+            cursor: pointer;
+            transition: transform .4s ease;
+        }
+        &-buy:hover {
+            transform: translateY(-5%);
+        }
+    }
+}

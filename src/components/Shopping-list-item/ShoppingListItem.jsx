@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ErrorBoundary from '../Error-boundary/Errorboundary';
 import './shopping-list.scss';
 
-export default function ShoppingListItem({cards, getCards, item}) {
+export default function ShoppingListItem({cards, getCards, item, liked, getLiked}) {
     const SetHover = () => {
         const [isHovering, setIsHovering] = useState(false);
 
@@ -17,20 +17,26 @@ export default function ShoppingListItem({cards, getCards, item}) {
             setIsHovering(false);
         }
 
-        const ShoppingListItemBtns = ({cards, getCards}) => {
+        const ShoppingListItemBtns = ({cards, getCards, liked, getLiked}) => {
             return (
                 <div className='btns'>
-                    <img src={like} alt="like-icon" />
-                    <img src={buy} alt="buy-icon" onClick={() => {
-                        getCards(cards, item);
-                    }}/>
+                    <img src={like} alt="like-icon" onClick={() => getLiked(liked, item)}/>
+                    <img src={buy} alt="buy-icon" onClick={() => getCards(cards, item)}/>
                 </div>
             )
         }
 
         return (
             <div className='list-item' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                {isHovering ? <ShoppingListItemBtns getCards={getCards} cards={cards}/> : null}
+                
+                {isHovering 
+                ? <ShoppingListItemBtns getCards={getCards} 
+                                                    cards={cards} 
+                                                    liked={liked} 
+                                                    getLiked={getLiked}
+                                                    /> 
+                : null}
+
                 <Link className='link' to={`/item/${item.id}`} key={item.id}>
                     <div className="scale">
                         <img className='list-item-image' src={item.image} alt={item.title} />
