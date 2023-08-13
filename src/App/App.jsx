@@ -23,6 +23,14 @@ const App = () => {
         setLiked([...liked, newLiked]);
     }
 
+    const onDeleteLiked = (id) => {
+        setLiked(liked.filter(item => item.id !== id));
+    } 
+
+    const onDeleteCards = (id) => {
+        setCards(cards.filter(item => item.id !== id));
+    }
+
     return (
         <>
             <Suspense fallback={<Loading/>}>
@@ -83,11 +91,11 @@ const App = () => {
                         />
                         <Route 
                             path='liked-list'
-                            element={ < LikedList liked={liked}/> }
+                            element={ < LikedList liked={liked} onDeleteLiked={onDeleteLiked}/> }
                         />
                         <Route 
                             path='shopping-cart'
-                            element={ < ShoppingCart cards={cards} /> }
+                            element={ < ShoppingCart cards={cards} onDeleteCards={onDeleteCards}/> }
                         />
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Route>

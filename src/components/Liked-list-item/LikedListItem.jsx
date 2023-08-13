@@ -2,7 +2,7 @@ import React from 'react';
 import cross from '../../img/icons/cross-icon.png';
 import './liked-list-item.scss';
 
-export default function LikedListItem({item}) {
+export default function LikedListItem({item, onDeleteLiked}) {
     return (
         <div className='liked-container'>
             <div className="liked-container-scale">
@@ -14,7 +14,7 @@ export default function LikedListItem({item}) {
                 <p className='liked-container-information-price'>{item.price}$</p>
             </div>
             <div className="liked-container-buttons">
-                <button className='liked-container-buttons-cross'><img src={cross} alt="cross" /></button>
+                <button className='liked-container-buttons-cross' onClick={() => onDeleteLiked(item.id)}><img src={cross} alt="cross" /></button>
                 <button className='liked-container-buttons-buy'>Buy</button>
             </div>
         </div>

@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import './shopping-cart.scss';
 
 
-export default function ShoppingCart({cards}) {
-    const renderItems = () => cards.map((item, i) => <ShoppingCartItem item={item} key={i}/>);
+export default function ShoppingCart({cards, onDeleteCards}) {
     
     return (
         <>
@@ -19,11 +18,19 @@ export default function ShoppingCart({cards}) {
             </Helmet>
                 <div className='shopping-cart'>
                     <h2>Shopping cart</h2>
-                    {cards.length ? renderItems() : <EmptyCart/>}
+                    {cards.length !== 0 
+                        ? <View cards={cards} onDeleteCards={onDeleteCards}/>
+                        : <EmptyCart/>}
                 </div>
         </>
     )
 }
+
+const View = ({cards, onDeleteCards}) => cards.map((item, i) => <ShoppingCartItem 
+                                                                    item={item} 
+                                                                    key={i} 
+                                                                    onDeleteCards={onDeleteCards}
+                                                                />);
 
 const EmptyCart = () => {
     return (

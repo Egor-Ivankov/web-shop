@@ -1,0 +1,44 @@
+.favorites-list {
+    h2 {
+        margin-top: 100px;
+        font-weight: 200;
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+.empty-liked-container {
+    margin-top: 100px;
+    text-align: center;
+
+    img {
+        width: 200px;
+    }
+
+    p {
+        margin-top: 50px;
+        font-weight: 200;
+        font-size: 24px;
+        color: gray;
+    }
+
+    &-link {
+        width: 60px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1% 0 0 48.6%;
+        border: 1px solid rgba(128, 128, 128, 0.778);
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 200;
+        color: rgba(82, 82, 82, 0.978);
+        background-color: #87878749;
+        transition: all .4s ease;
+    }
+
+    &-link:hover {
+        transform: translateY(-5%);
+    }
+}

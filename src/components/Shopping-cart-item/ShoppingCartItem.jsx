@@ -2,7 +2,7 @@ import React from 'react';
 import cross from '../../img/icons/cross-icon.png';
 import './shoppingCartItem.scss';
 
-export default function ShoppingCartItem({item}) {
+export default function ShoppingCartItem({item, onDeleteCards}) {
     return (
         <div className="shopping-cart-container">
             <ul>
@@ -15,7 +15,7 @@ export default function ShoppingCartItem({item}) {
                         <span>Кол-во: </span>
                         <input type="number"/>
                         <p>{item.price} $</p>
-                        <button><img src={cross} alt="cross" /></button>
+                        <button onClick={() => onDeleteCards(item.id)}><img src={cross} alt="cross" /></button>
                     </div>
                 </li>
                 
